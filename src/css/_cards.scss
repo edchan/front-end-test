@@ -1,0 +1,48 @@
+/* Cards */
+
+@use 'mixins' as *;
+@use 'blocks' as *;
+
+.list__title {
+  @extend .block__title;
+}
+
+.list__title--centered {
+  @extend .block__title--centered;
+}
+
+.card {
+  margin-bottom: 40px;
+}
+
+.card__image-wrapper {
+  @extend .block__image-wrapper;
+}
+
+.card__title {
+  @include card-title;
+}
+
+.card__image {
+  @extend .block__image;
+}
+
+.block__image--hover {
+  @extend .block__image--hover;
+}
+
+.list__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 640px) {
+  .list__cards {
+    flex-direction: row;
+  }
+
+  .card {
+    flex: 1 1 0;
+  }
+}

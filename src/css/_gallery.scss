@@ -1,0 +1,109 @@
+// Article Styles
+
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'blocks' as *;
+
+article {
+  h3 {
+    color: $color-red;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    margin-bottom: 24px;
+  }
+}
+
+.gallery__title {
+  @extend .block__title;
+}
+.gallery__images {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gallery__image-wrapper {
+  @extend .block__image-wrapper;
+}
+
+.gallery__image {
+  @extend .block__image;
+}
+
+.gallery__image--hover {
+  @extend .block__image--hover;
+}
+
+// Column Layout (Column 1 and Column 2)
+.gallery__column--1, .gallery__column--2 {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+// Flex-2 Layout
+.gallery__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery__wrapper .gallery__article-wrapper {
+  flex: 1;
+}
+
+.gallery__wrapper .gallery__images-wrapper {
+  flex: 2;
+}
+
+// Media Query for Featured Block - Above 640px (Changes Gallery Layout to Row)
+@media (min-width: 640px) {
+  .gallery__images {
+    flex-direction: row;
+  }
+}
+
+// Media Query for Featured Block - Above 768px (Modifies Flex-2 and Column Styles)
+@media (min-width: 768px) {
+  .gallery__wrapper {
+    flex-direction: row-reverse;
+  }
+
+  .gallery__column--1 img {
+    height: 600px;
+    object-fit: cover;
+  }
+
+  .gallery__column--2 img {
+    height: 295px;
+    object-fit: cover;
+  }
+
+  .gallery__column--1, .gallery__column--2 {
+    flex: 1;
+  }
+
+  article {
+    margin-left: 30px;
+  }
+
+  // Text Overflow Handling for Paragraphs
+  .line-clamp-paragraph {
+    @include line-clamp(11);
+  }
+}
+
+// Media Query for Larger Screens - Above 1146px (Adjusts Flex-2 and Wrapper)
+@media (min-width: 1146px) {
+  .gallery__wrapper .gallery__article-wrapper {
+    flex: 0 0 392px;
+  }
+
+  .gallery__wrapper .gallery__images-wrapper {
+    flex: 0 0 754px;
+  }
+}

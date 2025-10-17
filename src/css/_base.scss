@@ -1,0 +1,35 @@
+/* Base */
+
+@use 'variables' as *; 
+
+body {
+  background-color: $background-color;
+  color: $color-white;
+  font-family: $font;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: $color-white;
+
+  &:hover,
+  &:visited,
+  &:active {
+    color: $color-gray;
+  }
+}
+
+p {
+  font-size: 21px;
+}
+
+section {
+  padding: 40px 16px;
+}
+
+#main-wrapper {
+  margin: 0 auto;
+  max-width: 1146px;
+  width: 100%;
+}

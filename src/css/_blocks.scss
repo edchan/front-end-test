@@ -1,0 +1,29 @@
+/* Blocks */
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.block__title {
+  @include title-block($color-white);
+}
+
+.block__title--centered {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.block__image {
+  @include responsive-image;
+}
+
+.block__image--hover {
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.block__image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
