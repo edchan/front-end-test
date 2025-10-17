@@ -1,4 +1,4 @@
-// Article Styles
+/* Gallery */
 
 @use 'variables' as *;
 @use 'mixins' as *;
@@ -39,14 +39,12 @@ article {
   @extend .block__image--hover;
 }
 
-// Column Layout (Column 1 and Column 2)
 .gallery__column--1, .gallery__column--2 {
   display: flex;
   gap: 10px;
   flex-direction: column;
 }
 
-// Flex-2 Layout
 .gallery__wrapper {
   display: flex;
   flex-direction: column;
@@ -89,6 +87,12 @@ article {
 
   article {
     margin-left: 30px;
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   // Text Overflow Handling for Paragraphs

@@ -25,11 +25,17 @@ p {
 }
 
 section {
-  padding: 40px 16px;
+  padding: 60px 16px;
 }
 
 #main-wrapper {
   margin: 0 auto;
-  max-width: 1146px;
+  max-width: 1178px;
   width: 100%;
+}
+
+@media (min-width: 1146px) {
+  #main-wrapper {
+    margin: 60px auto;
+  }
 }

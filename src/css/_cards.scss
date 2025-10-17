@@ -13,6 +13,7 @@
 
 .card {
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .card__image-wrapper {
@@ -27,7 +28,7 @@
   @extend .block__image;
 }
 
-.block__image--hover {
+.card__image--hover {
   @extend .block__image--hover;
 }
 
@@ -44,5 +45,6 @@
 
   .card {
     flex: 1 1 0;
+    margin-bottom: 0;
   }
 }
